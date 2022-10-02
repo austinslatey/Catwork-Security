@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 
 
@@ -19,7 +20,9 @@ namespace CatWorx.BadgeMaker
 
       if (firstName == "")
       {
+        // Ask permission to write to .csv file
         break;
+        
       }
 
       // Add a console.ReadLine() for each value
@@ -53,7 +56,9 @@ namespace CatWorx.BadgeMaker
   static void Main(string[] args)
   {
     List<Employee> employees = GetEmployees();
-    PrintEmployees(employees);
+    Util.PrintEmployees(employees);
+    // Print to .csv file
+    Util.MakeCSV(employees);
   }
 }
 }
