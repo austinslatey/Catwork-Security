@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "GdIshMDEA9MNCAyPYbe7ivfCllAeU41hLvEz4lsLyOXmassygjBFApYuh3mxsmYLrMz0qdRvJs05XnibPjrhwA==",
+  "dgSpecHash": "eqH65eHT3pah759VGEEDc0vfggmay8Q2ysqQe8PgvtFlSFhZZWvL66yQZTtESyD34lCnihjOJbdbOtT36lW75Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\austi\\OneDrive\\Desktop\\jects\\C#\\Catwork-Security\\CatWorx.BadgeMaker.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\austi\\.nuget\\packages\\skiasharp\\2.88.2\\skiasharp.2.88.2.nupkg.sha512",
+    "C:\\Users\\austi\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.2\\skiasharp.nativeassets.macos.2.88.2.nupkg.sha512",
+    "C:\\Users\\austi\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.2\\skiasharp.nativeassets.win32.2.88.2.nupkg.sha512"
+  ],
   "logs": []
 }
