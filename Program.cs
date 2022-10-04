@@ -1,44 +1,13 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 
 namespace CatWorx.BadgeMaker
 {
     class Program
 {
-  static List<Employee> GetEmployees()
-  {
-    List<Employee> employees = new List<Employee>();
-    while (true)
-    {
-      // Move the initial prompt inside the loop, so it repeats for each employee
-      Console.WriteLine("Please first name: (leave empty to exit): ");
-
-      // Change input to firstName
-      string firstName = Console.ReadLine() ?? "";
-
-      if (firstName == "")
-      {
-        break;
-      }
-
-      // Add a console.ReadLine() for each value
-      Console.WriteLine("Enter last name: ");
-      string lastName = Console.ReadLine() ?? "";
-      Console.Write("Enter ID: ");
-      int id = Int32.Parse(Console.ReadLine() ?? "");
-      Console.Write("Enter Photo URL: ");
-      string photoUrl = Console.ReadLine() ?? "";
-
-      // Create a new Employee instance
-      Employee currentEmployee = new Employee(firstName, lastName, id, photoUrl);
-      // Add currentEmployee not a string  
-      employees.Add(currentEmployee);
-    }
-    // Update the metod return type
-
-    return employees;
-  }
 
   static void PrintEmployees(List<Employee> employees)
   {
@@ -50,10 +19,27 @@ namespace CatWorx.BadgeMaker
     }
   }
 
-  static void Main(string[] args)
-  {
-    List<Employee> employees = GetEmployees();
-    PrintEmployees(employees);
+  async static Task Main(string[] args)
+  { 
+    List<Employee> employees;
+    Console.WriteLine("Wecome fellow Catworx Employee!\nWould you like to auto-generate 10 employees?\nY\nor\nN?\n Anykey other than y will run CLI");
+    string answer = Console.ReadLine();
+    if (answer == "y" || answer == "Y")
+    {
+      employees = await PeopleFetcher.GetFromApi();
+    }
+    else {
+      employees = PeopleFetcher.GetEmployees();
+    }
+    
+    // Print Employees to console
+    Util.PrintEmployees(employees);
+    // Print to .csv file
+    Util.MakeCSV(employees);
+    // Create Employee badge
+    await Util.MakeBadges(employees);
+    
+
   }
 }
 }
