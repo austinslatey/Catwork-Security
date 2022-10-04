@@ -38,9 +38,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Newtonsoft.json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "SkiaSharp": {
               "target": "Package",
-              "version": "[2.88.2, )"
+              "version": "[2.88.0, )"
             }
           },
           "imports": [
