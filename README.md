@@ -34,7 +34,7 @@
   Download or clone this repository from your code editor. Open up Microsoft Powershell and type the command "dotnet run" and hit enter to launch.
 
   ## Usage
-  All data saved as .PNG files in "data" folder of appication.
+  All data saved as .PNG files in "data" folder of application.
 
   ## License 
   MIT
